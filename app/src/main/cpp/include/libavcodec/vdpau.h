@@ -103,7 +103,6 @@ typedef struct AVVDPAUContext {
 AVVDPAUContext *av_alloc_vdpaucontext(void);
 
 AVVDPAU_Render2 av_vdpau_hwaccel_get_render2(const AVVDPAUContext *);
-
 void av_vdpau_hwaccel_set_render2(AVVDPAUContext *, AVVDPAU_Render2);
 
 /**

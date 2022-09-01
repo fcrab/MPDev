@@ -512,7 +512,6 @@ const char *av_get_channel_description(uint64_t channel);
 attribute_deprecated
 int av_get_standard_channel_layout(unsigned index, uint64_t *layout,
                                    const char **name);
-
 #endif
 
 /**

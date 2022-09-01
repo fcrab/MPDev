@@ -1,8 +1,5 @@
 #include <jni.h>
 #include <string>
-#include <libavcodec/avcodec.h>
-#include <libavformat/avformat.h>
-#include <libavfilter/avfilter.h>
 
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_crabfibber_project_mpdev_MainActivity_stringFromJNI(

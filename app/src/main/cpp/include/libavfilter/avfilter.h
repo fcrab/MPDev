@@ -48,13 +48,11 @@
 #include "libavutil/rational.h"
 
 #include "libavfilter/version_major.h"
-
 #ifndef HAVE_AV_CONFIG_H
 /* When included as part of the ffmpeg build, only include the major version
  * to avoid unnecessary rebuilds. When included externally, keep including
  * the full version information. */
 #include "libavfilter/version.h"
-
 #endif
 
 /**
@@ -86,7 +84,6 @@ typedef struct AVFilterChannelLayouts AVFilterChannelLayouts;
  */
 attribute_deprecated
 int avfilter_pad_count(const AVFilterPad *pads);
-
 #endif
 
 /**
@@ -330,7 +327,6 @@ typedef struct AVFilter {
          * AVERROR code otherwise
          */
         int (*query_func)(AVFilterContext *);
-
         /**
          * A pointer to an array of admissible pixel formats delimited
          * by AV_PIX_FMT_NONE. The generic code will use this list

@@ -156,15 +156,11 @@
 #endif
 
 #ifndef av_log2
-
 av_const int av_log2(unsigned v);
-
 #endif
 
 #ifndef av_log2_16bit
-
 av_const int av_log2_16bit(unsigned v);
-
 #endif
 
 /**

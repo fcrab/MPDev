@@ -296,7 +296,6 @@ const AVCodec *avcodec_find_encoder(enum AVCodecID id);
  * @return An encoder if one was found, NULL otherwise.
  */
 const AVCodec *avcodec_find_encoder_by_name(const char *name);
-
 /**
  * @return a non-zero number if codec is an encoder, zero otherwise
  */

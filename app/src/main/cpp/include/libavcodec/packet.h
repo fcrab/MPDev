@@ -510,7 +510,6 @@ void av_packet_free(AVPacket **pkt);
  */
 attribute_deprecated
 void av_init_packet(AVPacket *pkt);
-
 #endif
 
 /**
@@ -614,7 +613,6 @@ const char *av_packet_side_data_name(enum AVPacketSideDataType type);
  * @return pointer to data if successful, NULL otherwise
  */
 uint8_t *av_packet_pack_dictionary(AVDictionary *dict, size_t *size);
-
 /**
  * Unpack a dictionary from side_data.
  *

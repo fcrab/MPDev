@@ -422,7 +422,6 @@ static inline uint8_t *av_fifo_peek2(const AVFifoBuffer *f, int offs) {
         ptr = f->end - (f->buffer - ptr);
     return ptr;
 }
-
 #endif
 #endif
 

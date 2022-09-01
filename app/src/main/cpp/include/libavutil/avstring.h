@@ -161,7 +161,6 @@ char *av_asprintf(const char *fmt, ...) av_printf_format(1, 2);
  */
 attribute_deprecated
 char *av_d2str(double d);
-
 #endif
 
 /**

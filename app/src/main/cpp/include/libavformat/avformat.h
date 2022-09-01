@@ -320,13 +320,11 @@
 
 #include "avio.h"
 #include "libavformat/version_major.h"
-
 #ifndef HAVE_AV_CONFIG_H
 /* When included as part of the ffmpeg build, only include the major version
  * to avoid unnecessary rebuilds. When included externally, keep including
  * the full version information. */
 #include "libavformat/version.h"
-
 #endif
 
 struct AVFormatContext;
@@ -557,7 +555,6 @@ typedef struct AVOutputFormat {
     int flags_internal;
 
     int (*write_header)(struct AVFormatContext *);
-
     /**
      * Write a packet. If AVFMT_ALLOW_FLUSH is set in flags,
      * pkt can be NULL in order to flush data buffered in the muxer.
@@ -566,9 +563,7 @@ typedef struct AVOutputFormat {
      * data.
      */
     int (*write_packet)(struct AVFormatContext *, AVPacket *pkt);
-
     int (*write_trailer)(struct AVFormatContext *);
-
     /**
      * A format-specific function for interleavement.
      * If unset, packets will be interleaved by dts.
@@ -587,7 +582,6 @@ typedef struct AVOutputFormat {
      */
     int (*interleave_packet)(struct AVFormatContext *s, AVPacket *pkt,
                              int flush, int has_packet);
-
     /**
      * Test if the given codec can be stored in this container.
      *
@@ -599,7 +593,6 @@ typedef struct AVOutputFormat {
 
     void (*get_output_timestamp)(struct AVFormatContext *s, int stream,
                                  int64_t *dts, int64_t *wall);
-
     /**
      * Allows sending messages from application to device.
      */
@@ -616,13 +609,11 @@ typedef struct AVOutputFormat {
      */
     int (*write_uncoded_frame)(struct AVFormatContext *, int stream_index,
                                AVFrame **frame, unsigned flags);
-
     /**
      * Returns device list with it properties.
      * @see avdevice_list_devices() for more details.
      */
     int (*get_device_list)(struct AVFormatContext *s, struct AVDeviceInfoList *device_list);
-
     enum AVCodecID data_codec; /**< default data codec */
     /**
      * Initialize format. May allocate data here, and set any AVFormatContext or
@@ -634,7 +625,6 @@ typedef struct AVOutputFormat {
      * Any allocations made here must be freed in deinit().
      */
     int (*init)(struct AVFormatContext *);
-
     /**
      * Deinitialize format. If present, this is called whenever the muxer is being
      * destroyed, regardless of whether or not the header has been written.
@@ -644,7 +634,6 @@ typedef struct AVOutputFormat {
      * This is called if init() fails as well.
      */
     void (*deinit)(struct AVFormatContext *);
-
     /**
      * Set up any necessary bitstream filtering and extract any extra data needed
      * for the global header.
@@ -1141,7 +1130,6 @@ struct AVCodecParserContext *av_stream_get_parser(const AVStream *s);
  */
 attribute_deprecated
 int64_t av_stream_get_end_pts(const AVStream *st);
-
 #endif
 
 #define AV_PROGRAM_RUNNING 1
@@ -1994,7 +1982,6 @@ int av_stream_add_side_data(AVStream *st, enum AVPacketSideDataType type,
  */
 uint8_t *av_stream_new_side_data(AVStream *stream,
                                  enum AVPacketSideDataType type, size_t size);
-
 /**
  * Get side information from stream.
  *
@@ -2688,7 +2675,6 @@ const AVIndexEntry *avformat_index_get_entry(AVStream *st, int idx);
 const AVIndexEntry *avformat_index_get_entry_from_timestamp(AVStream *st,
                                                             int64_t wanted_timestamp,
                                                             int flags);
-
 /**
  * Add an index entry into a sorted list. Update the entry if the list
  * already contains it.
@@ -2828,17 +2814,14 @@ int avformat_query_codec(const AVOutputFormat *ofmt, enum AVCodecID codec_id,
  * @return the table mapping RIFF FourCCs for video to libavcodec AVCodecID.
  */
 const struct AVCodecTag *avformat_get_riff_video_tags(void);
-
 /**
  * @return the table mapping RIFF FourCCs for audio to AVCodecID.
  */
 const struct AVCodecTag *avformat_get_riff_audio_tags(void);
-
 /**
  * @return the table mapping MOV FourCCs for video to libavcodec AVCodecID.
  */
 const struct AVCodecTag *avformat_get_mov_video_tags(void);
-
 /**
  * @return the table mapping MOV FourCCs for audio to AVCodecID.
  */

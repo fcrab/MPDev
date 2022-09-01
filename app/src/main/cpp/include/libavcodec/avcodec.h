@@ -44,13 +44,11 @@
 #include "defs.h"
 #include "packet.h"
 #include "version_major.h"
-
 #ifndef HAVE_AV_CONFIG_H
 /* When included as part of the ffmpeg build, only include the major version
  * to avoid unnecessary rebuilds. When included externally, keep including
  * the full version information. */
 #include "version.h"
-
 #endif
 
 /**
@@ -2375,7 +2373,6 @@ const AVClass *avcodec_get_class(void);
  */
 attribute_deprecated
 const AVClass *avcodec_get_frame_class(void);
-
 #endif
 
 /**
@@ -2790,6 +2787,7 @@ int avcodec_get_hw_frames_parameters(AVCodecContext *avctx,
                                      AVBufferRef **out_frames_ref);
 
 
+
 /**
  * @defgroup lavc_parsing Frame parsing
  * @{
@@ -2964,18 +2962,14 @@ typedef struct AVCodecParserContext {
 typedef struct AVCodecParser {
     int codec_ids[7]; /* several codec IDs are permitted */
     int priv_data_size;
-
     int (*parser_init)(AVCodecParserContext *s);
-
     /* This callback never returns an error, a negative value means that
      * the frame start was in a previous packet. */
     int (*parser_parse)(AVCodecParserContext *s,
                         AVCodecContext *avctx,
                         const uint8_t **poutbuf, int *poutbuf_size,
                         const uint8_t *buf, int buf_size);
-
     void (*parser_close)(AVCodecParserContext *s);
-
     int (*split)(AVCodecContext *avctx, const uint8_t *buf, int buf_size);
 } AVCodecParser;
 

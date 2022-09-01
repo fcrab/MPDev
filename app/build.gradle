@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "com.crabfibber.project.mpdev"
         minSdk 21
-        targetSdk 32
+        targetSdk 28
         versionCode 1
         versionName "1.0"
 
@@ -43,7 +43,7 @@ android {
     externalNativeBuild {
         cmake {
             path file('src/main/cpp/CMakeLists.txt')
-            version '3.18.1'
+            version '3.10.2'
         }
     }
     buildFeatures {

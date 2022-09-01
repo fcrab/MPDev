@@ -20,13 +20,11 @@
 #define AVDEVICE_AVDEVICE_H
 
 #include "version_major.h"
-
 #ifndef HAVE_AV_CONFIG_H
 /* When included as part of the ffmpeg build, only include the major version
  * to avoid unnecessary rebuilds. When included externally, keep including
  * the full version information. */
 #include "version.h"
-
 #endif
 
 /**
@@ -458,7 +456,6 @@ int avdevice_capabilities_create(AVDeviceCapabilitiesQuery **caps, AVFormatConte
  */
 attribute_deprecated
 void avdevice_capabilities_free(AVDeviceCapabilitiesQuery **caps, AVFormatContext *s);
-
 #endif
 
 /**
@@ -521,7 +518,6 @@ void avdevice_free_list_devices(AVDeviceInfoList **device_list);
  */
 int avdevice_list_input_sources(const AVInputFormat *device, const char *device_name,
                                 AVDictionary *device_options, AVDeviceInfoList **device_list);
-
 int avdevice_list_output_sinks(const AVOutputFormat *device, const char *device_name,
                                AVDictionary *device_options, AVDeviceInfoList **device_list);
 

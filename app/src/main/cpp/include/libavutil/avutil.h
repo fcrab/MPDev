@@ -341,7 +341,6 @@ unsigned av_int_list_length_for_size(unsigned elsize,
  */
 attribute_deprecated
 FILE *av_fopen_utf8(const char *path, const char *mode);
-
 #endif
 
 /**

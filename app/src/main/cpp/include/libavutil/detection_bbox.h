@@ -103,5 +103,4 @@ AVDetectionBBoxHeader *av_detection_bbox_alloc(uint32_t nb_bboxes, size_t *out_s
  * AV_FRAME_DATA_DETECTION_BBOXES and initializes the variables.
  */
 AVDetectionBBoxHeader *av_detection_bbox_create_side_data(AVFrame *frame, uint32_t nb_bboxes);
-
 #endif

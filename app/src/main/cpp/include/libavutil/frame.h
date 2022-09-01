@@ -723,9 +723,7 @@ typedef struct AVFrame {
  */
 attribute_deprecated
 const char *av_get_colorspace_name(enum AVColorSpace val);
-
 #endif
-
 /**
  * Allocate an AVFrame and set its fields to default values.  The resulting
  * struct must be freed using av_frame_free().
